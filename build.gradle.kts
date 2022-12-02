@@ -4,10 +4,19 @@ plugins {
     kotlin("jvm") version "1.7.22"
     application
     kotlin("plugin.serialization") version "1.7.22"
+    id("maven-publish")
 }
 
 group = "com.tosmo"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
+
+publishing {
+    publications {
+        create("maven_public", MavenPublication::class) {
+            from(components.getByName("kotlin"))
+        }
+    }
+}
 
 repositories {
     mavenCentral()
