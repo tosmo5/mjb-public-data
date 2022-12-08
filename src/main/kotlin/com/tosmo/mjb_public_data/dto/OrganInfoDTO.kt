@@ -4,7 +4,7 @@ import com.tosmo.mjb_public_data.enums.OrganType
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class OrganInfomationDTO(
+data class OrganInfoDTO(
     /**
      * 机构编号
      */
@@ -24,5 +24,5 @@ data class OrganInfomationDTO(
     /**
      * 下级机构
      */
-    val subunits: List<OrganInfomationDTO> = emptyList()
+    val subunits: List<OrganInfoDTO> = emptyList()
 ) : java.io.Serializable

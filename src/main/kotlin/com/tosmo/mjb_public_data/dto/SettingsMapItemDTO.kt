@@ -28,6 +28,9 @@ data class SettingsMapItemDTO(
     val description: String
 ) : java.io.Serializable {
 
+    /**
+     * 实际的value
+     */
     val value: Any?
         get() = if (stringValue.isEmpty()) null else when (valueType) {
             ValueType.BOOLEAN -> stringValue.toBoolean()
