@@ -9,9 +9,13 @@ data class LoggedInUserDTO(
      */
     val userId: Long,
     /**
-     * 展示的名称
+     * 用户名
      */
-    val displayName: String,
+    val username: String,
+    /**
+     * 昵称
+     */
+    val nickname: String,
     /**
      * 公司集合
      */
