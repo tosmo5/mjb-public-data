@@ -1,7 +1,7 @@
 package com.tosmo.mjb_public_data.dto
 
-import com.tosmo.ktils.TimeUtils
 import com.tosmo.mjb_public_data.enums.ValueType
+import com.tosmo.mjb_public_data.util.TimeUtils
 import kotlinx.serialization.Serializable
 
 @Serializable
