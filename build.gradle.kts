@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.tosmo"
-version = "0.0.4"
+version = "0.0.6"
 
 publishing {
     publications {
@@ -28,7 +28,6 @@ dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-    implementation("com.github.tosmo5:ktils:0.3.9")
 }
 
 tasks.test {
