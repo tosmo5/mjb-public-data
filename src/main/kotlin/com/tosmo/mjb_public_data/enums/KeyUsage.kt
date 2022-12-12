@@ -35,7 +35,17 @@ enum class KeyUsage(val code: Int) {
     /**
      * 订单声明
      */
-    SETUP_ORDER_DECLARATION(106)
+    SETUP_ORDER_DECLARATION(106),
+
+    /**
+     * 薪酬基础规则设置
+     */
+    SETUP_SALARY_BASE(200),
+
+    /**
+     * 个税与社保设置
+     */
+    SETUP_SALARY_EXTENSION(201)
 
     ;
 
