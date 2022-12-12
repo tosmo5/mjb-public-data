@@ -25,7 +25,7 @@ enum class KeyUsage(val code: Int) {
     /**
      * 积分标准设置
      */
-    SETUP_POINT_BASE(104),
+    SETUP_POINT_NORM(104),
 
     /**
      * 消费返现设置
