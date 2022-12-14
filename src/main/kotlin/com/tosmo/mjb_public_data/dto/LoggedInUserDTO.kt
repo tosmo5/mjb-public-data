@@ -2,6 +2,7 @@ package com.tosmo.mjb_public_data.dto
 
 import kotlinx.serialization.Serializable
 
+@Deprecated("", ReplaceWith("UserDTO"))
 @Serializable
 data class LoggedInUserDTO(
     /**
