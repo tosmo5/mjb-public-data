@@ -25,105 +25,139 @@ object ReqUrl {
         return (end - start) / 1000f
     }
 
+    internal const val PREFIX = "/mjb"
+
     // setup
 
-    private const val SETUP_PREFIX = "/mjb/setup"
+    object Setup {
+        internal const val PREFIX = "${ReqUrl.PREFIX}/setup"
 
-    /**
-     * 查设置项
-     */
-    const val SETUP_SEARCH_ITEM: String = "${SETUP_PREFIX}/search-item"
+        /**
+         * 查设置项
+         */
+        const val SEARCH_ITEM: String = "$PREFIX/search-item"
 
-    /**
-     * 查设置项组
-     */
-    const val SETUP_SEARCH_GROUP: String = "${SETUP_PREFIX}/search-group"
-
-
-    // customer grade
-
-    private const val CUSTOMER_GRADE_PREFIX = "/mjb/customer-grade"
-
-    /**
-     * 添加一条顾客等级
-     */
-    const val CUSTOMER_GRADE_ADD_ONE = "${CUSTOMER_GRADE_PREFIX}/add"
-
-    /**
-     * 添加多个顾客等级
-     */
-    const val CUSTOMER_GRADE_ADD_MULTI = "${CUSTOMER_GRADE_PREFIX}/add-multi"
-
-    /**
-     * 修改顾客等级
-     */
-    const val CUSTOMER_GRADE_MODIFY = "${CUSTOMER_GRADE_PREFIX}/modify"
-
-    /**
-     * 查询机构的顾客等级
-     */
-    const val CUSTOMER_GRADE_SEARCH_ORGAN = "${CUSTOMER_GRADE_PREFIX}/search-organ"
-
-    /**
-     * 复制默认的会员等级到机构中
-     */
-    const val CUSTOMER_GRADE_COPY_DEFAULT = "${CUSTOMER_GRADE_PREFIX}/copy-default"
-
-    // customer origin
-
-    private const val CUSTOMER_ORIGIN_PREFIX = "/mjb/customer-origin"
-
-    /**
-     * 新增一个顾客来源
-     */
-    const val CUSTOMER_ORIGIN_ADD_ONE = "${CUSTOMER_ORIGIN_PREFIX}/add"
-
-    /**
-     * 新增多个顾客来源
-     */
-    const val CUSTOMER_ORIGIN_ADD_MULTI = "${CUSTOMER_ORIGIN_PREFIX}/add-multi"
-
-    /**
-     * 查询机构下的顾客来源
-     */
-    const val CUSTOMER_ORIGIN_SEARCH_ORGAN = "${CUSTOMER_ORIGIN_PREFIX}/search-organ"
-
-    /**
-     * 复制默认的顾客来源到机构
-     */
-    const val CUSTOMER_ORIGIN_COPY_DEFAULT = "${CUSTOMER_ORIGIN_PREFIX}/copy-default"
-
-    // organ
-
-    private const val ORGAN_PREFIX = "/mjb/organ"
-
-    /**
-     * 查询下级机构
-     */
-    const val ORGAN_SEARCH_SUBUNITS = "${ORGAN_PREFIX}/search-subunits"
+        /**
+         * 查设置项组
+         */
+        const val SEARCH_GROUP: String = "$PREFIX/search-group"
+    }
 
 
-    // user
+    object Customer {
 
-    private const val USER_PREFIX = "/mjb/user"
+        internal const val PREFIX = "${ReqUrl.PREFIX}/customer"
 
-    /**
-     * 账号密码验证
-     */
-    const val USER_AUTH = "${USER_PREFIX}/auth"
+        /**
+         * 新增一个顾客
+         */
+        const val ADD_ONE = "$PREFIX/add"
 
-    /**
-     * 用户登录
-     */
-    const val USER_LOGIN = "${USER_PREFIX}/login"
+        /**
+         * 修改顾客信息
+         */
+        const val MODIFY = "$PREFIX/modify"
 
-    /**
-     * 用户退出
-     */
-    const val USER_LOGOUT = "${USER_PREFIX}/logout"
+        /**
+         * 查询机构下的顾客
+         */
+        const val SEARCH_ORGAN = "$PREFIX/search-organ"
 
-    /**
-     * 查询用户信息
-     */
-    const val USER_SEARCH_USER = "${USER_PREFIX}/search-user"
+        /**
+         * 查询顾客信息
+         */
+        const val SEARCH_CUSTOMER = "$PREFIX/search-id"
+
+        object Grade {
+
+            internal const val PREFIX = "${Customer.PREFIX}/grade"
+
+            /**
+             * 添加一条顾客等级
+             */
+            const val ADD_ONE = "${PREFIX}/add"
+
+            /**
+             * 添加多个顾客等级
+             */
+            const val ADD_MULTI = "${PREFIX}/add-multi"
+
+            /**
+             * 修改顾客等级
+             */
+            const val MODIFY = "${PREFIX}/modify"
+
+            /**
+             * 查询机构的顾客等级
+             */
+            const val SEARCH_ORGAN = "${PREFIX}/search-organ"
+
+            /**
+             * 复制默认的会员等级到机构中
+             */
+            const val COPY_DEFAULT = "${PREFIX}/copy-default"
+        }
+
+        object Origin {
+
+            internal const val PREFIX = "${ReqUrl.PREFIX}${Customer.PREFIX}/origin"
+
+            /**
+             * 新增一个顾客来源
+             */
+            const val ADD_ONE = "$PREFIX/add"
+
+            /**
+             * 新增多个顾客来源
+             */
+            const val ADD_MULTI = "$PREFIX/add-multi"
+
+            /**
+             * 查询机构下的顾客来源
+             */
+            const val SEARCH_ORGAN = "$PREFIX/search-organ"
+
+            /**
+             * 复制默认的顾客来源到机构
+             */
+            const val COPY_DEFAULT = "$PREFIX/copy-default"
+        }
+    }
+
+    object Organ {
+
+        internal const val PREFIX = "${ReqUrl.PREFIX}/organ"
+
+        /**
+         * 查询下级机构
+         */
+        const val SEARCH_SUBUNITS = "$PREFIX/search-subunits"
+
+    }
+
+    object User {
+
+        internal const val PREFIX = "${ReqUrl.PREFIX}/user"
+
+        /**
+         * 账号密码验证
+         */
+        const val AUTH = "$PREFIX/auth"
+
+        /**
+         * 用户登录
+         */
+        const val LOGIN = "$PREFIX/login"
+
+        /**
+         * 用户退出
+         */
+        const val LOGOUT = "$PREFIX/logout"
+
+        /**
+         * 查询用户信息
+         */
+        const val SEARCH_USER = "$PREFIX/search-user"
+    }
+
 }
