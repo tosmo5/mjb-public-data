@@ -1,5 +1,11 @@
 package com.tosmo.mjb_public_data.http
 
+import com.tosmo.mjb_public_data.http.ReqUrl.Customer.ADD_ONE
+import com.tosmo.mjb_public_data.http.ReqUrl.Customer.MODIFY
+import com.tosmo.mjb_public_data.http.ReqUrl.Customer.SEARCH_CUSTOMER
+import com.tosmo.mjb_public_data.http.ReqUrl.Customer.SEARCH_ORGAN
+import com.tosmo.mjb_public_data.http.ReqUrl.Setup.SEARCH_GROUP
+import com.tosmo.mjb_public_data.http.ReqUrl.Setup.SEARCH_ITEM
 import kotlin.reflect.KProperty1
 import kotlin.reflect.KVisibility
 import kotlin.reflect.full.declaredMemberProperties
@@ -27,8 +33,10 @@ object ReqUrl {
 
     internal const val PREFIX = "/mjb"
 
-    // setup
-
+    /**
+     * @property SEARCH_ITEM
+     * @property SEARCH_GROUP
+     */
     object Setup {
         internal const val PREFIX = "${ReqUrl.PREFIX}/setup"
 
@@ -43,7 +51,12 @@ object ReqUrl {
         const val SEARCH_GROUP: String = "$PREFIX/search-group"
     }
 
-
+    /**
+     * @property ADD_ONE
+     * @property MODIFY
+     * @property SEARCH_ORGAN
+     * @property SEARCH_CUSTOMER
+     */
     object Customer {
 
         internal const val PREFIX = "${ReqUrl.PREFIX}/customer"
